@@ -1,12 +1,8 @@
-const INIT_CHAT = 'INIT_CHAT'
-
-export default function profile(state = {}, action){
-  let { count = 0 } = state
-  return {count: ++count}
-
+export function count(state = {}, action){
   switch(action.type){
-    case INIT_CHAT:
-      return state
+    case 'INCREMENT_COUNT':
+      const { count = 0} = state
+      return {...state, count: count + 1}
     default: return state
   }
 }
